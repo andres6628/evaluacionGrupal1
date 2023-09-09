@@ -1,4 +1,4 @@
-cuentas=[
+let cuentas=[
     {numeroCuenta:"02234567", cedula:"1714616123",nombre:"Juan",apellido:"Perez",saldo:0.0},
     {numeroCuenta:"02345211",cedula:"1281238233",nombre:"Felipe",apellido:"Caicedo",saldo:0.0}
 ]
@@ -15,13 +15,33 @@ cargar=function(){
     si existe retorna el objeto cuenta, caso contrario retorna null. 
 */
 buscarCuenta=function(numeroCuenta){
-
+    let encontrado = null;
+    let cuenta;
+    for (let i = 0; i < cuentas.length; i++) {
+        cuenta = cuentas[i];
+        if (numeroCuenta == cuenta.numeroCuenta ) {
+            encontrado = cuenta;
+            break;
+        }  
+    }
+    return encontrado;
 }
 
 ejecutarBusqueda=function(){
     //toma el numero de cuenta de la caja de texto
     //invoca a buscarCuenta y guarda el resultado en una variable
     //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
+    let valorCuentaNumero = recuperarTexto("txtBusquedaCuenta");
+    let resultado = buscarCuenta(valorCuentaNumero);
+    if (resultado != null) {
+        mostrarTexto("infoNumeroCuenta",resultado.numeroCuenta);
+        mostrarTexto("infoCedula",resultado.cedula);
+        mostrarTexto("infoNombre",resultado.nombre+" "+resultado.apellido);
+        mostrarTexto("infoSaldo",resultado.saldo);
+    }else{
+        alert("CUENTA NO ENCONTRADA");
+    }
+            
 }
 
 depositar=function(numeroCuenta,monto){
