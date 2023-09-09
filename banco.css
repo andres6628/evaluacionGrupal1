@@ -93,3 +93,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+.ingresoDatos{
+    display: flex;
+    flex-direction: row;
+}

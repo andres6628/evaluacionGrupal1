@@ -73,4 +73,19 @@ retirar=function(numeroCuenta,monto){
     //Si el saldo es suficiente,al saldo actual de la cuenta afectada, le resta el monto que recibe como parámetro
     //Si el saldo no es suficiente, muestra un alert SALDO INSUFICIENTE
     //Si logra retirar muestra un mensaje TRANSACCION EXITOSA y muestra en pantalla el nuevo saldo de la cuenta
+    cuentaAfectada = buscarCuenta(numeroCuenta);
+    if (cuentaAfectada != null) {
+        if (cuentaAfectada.saldo >= monto) {
+            cuentaAfectada.saldo -= monto;
+            mostrarTexto("lblTransaccion","TRANSACCION EXITOSA");
+            mostrarTexto("infoSaldo",cuentaAfectada.saldo);
+        }else{
+            alert("SALDO INSUFICIENTE");
+        }
+    }
+}
+ejecutarRetiro=function(){
+    let valorCuentaNumero = recuperarTexto("txtBusquedaCuenta");
+    let valorMonto = recuperarInt("txtMonto");
+    retirar(valorCuentaNumero,valorMonto);
 }
