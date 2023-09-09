@@ -155,7 +155,7 @@ tbody tr:nth-child(odd) {
     color: #232623;
     border: 1px solid;
     border-color: #232623;
-    border-radius: 5px;
+    border-radius: 5px;}
 .ingresoDatos{
     display: flex;
     flex-direction: row;

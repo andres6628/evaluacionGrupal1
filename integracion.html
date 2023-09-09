@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="banco.css" rel="stylesheet" />
+    <script src="integracion.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+
+<body onload="cargar();">
+    <div class="principal">
+        <div class="menu">
+            <div class="contenedorLogo">
+                <img src="./imagenes/logoKrakeDev.png" width="80%" />
+            </div>
+            <div class="contenedorBotones">
+                <input type="button" value="CUENTAS" class="boton" onclick="mostrarCuentas()"/>
+                <input type="button" value="TRANSACCIONES" class="boton" onclick="mostrarTransacciones()"/>
+                <input type="button" value="MOVIMIENTOS" class="boton" onclick="mostrarMovimientos()" />
+            </div>
+            <div class="contenedorInfoGrupo">
+                <div>INTEGRANTE 1</div>
+                <div>INTEGRANTE 2</div>
+                <div>INTEGRANTE 3</div>
+            </div>
+        </div>
+        <div class="contenido" id="divCuentas">
+            <div class="superior">
+                <div class="titulo">CUENTAS</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">CEDULA</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtCedula"/>
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">NOMBRE</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtNombre"/>
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">APELLIDO</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtApellido" />
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">N° CUENTA</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtCuenta"/>
+                    </div>
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="GUARDAR" onclick="agregar();"/>
+                </div>
+            </div>
+
+            <div class="inferior" id="tablaCuentas">
+            </div>
+
+        </div>
+        <div class="contenido" id="divTransacciones"> 
+            <div class="superior">
+                <div class="titulo">TRANSACCIONES</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtBusquedaCuenta" />
+                    </div>
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()"/>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        NUMERO DE CUENTA:
+                    </div>
+                    <div>
+                        <div class="info" id="infoNumeroCuenta"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        CEDULA:
+                    </div>
+                    <div>
+                        <div class="info" id="infoCedula"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        NOMBRE:
+                    </div>
+                    <div>
+                        <div class="info" id="infoNombre"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        SALDO:
+                    </div>
+                    <div>
+                        <div class="info" id="infoSaldo"></div>
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtMonto"/>
+                    </div>
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="DEPOSITAR"  onclick="ejecutarDeposito()"/>
+                    <input type="button" value="RETIRAR" onclick="ejecutarRetiro()"/>     
+                </div>
+                <div id="lblTransaccion"></div>
+            </div>
+        </div>
+        <div class="contenido" id="divMovimientos">
+          
+            <div class="inferior">
+                <div class="titulo">MOVIMIENTOS</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtCuentaM"/>
+                    </div>
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="BUSCAR"  onclick="ejecutarMisMovimiento()"/>                    
+                </div>
+                <div id="tablaMovimientos">
+                    TABLA
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
