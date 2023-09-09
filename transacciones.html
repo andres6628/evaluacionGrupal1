@@ -102,15 +102,15 @@
                 <div class="contenedorTexto">
                     <div class="etiquetaTexto">CAMPO 2</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtMonto"/>
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
+                    <input type="button" value="DEPOSITAR"  onclick="ejecutarDeposito()"/>
                     <input type="button" value="RETIRAR" />
                     
                 </div>
-              
+                <div id="lblTransaccion"></div>
             </div>
         </div>
         <div class="contenido" id="divMovimientos">
