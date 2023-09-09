@@ -16,7 +16,7 @@
             <div class="contenedorBotones">
                 <input type="button" value="CUENTAS" class="boton" />
                 <input type="button" value="TRANSACCIONES" class="boton" />
-                <input type="button" value="MOVIMIENTOS" class="boton" />
+                <input type="button" value="MOVIMIENTOS" class="boton" onclick="" />
             </div>
             <div class="contenedorInfoGrupo">
                 <div>INTEGRANTE 1</div>
@@ -28,9 +28,9 @@
             <div class="superior">
                 <div class="titulo">CUENTAS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">Nro de Cuenta:</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="" />
                     </div>
                 </div>
                 <div class="contenedorTexto">
@@ -88,11 +88,11 @@
                 <div class="contenedorTexto">
                     <div class="etiquetaTexto">CAMPO 1</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtCuentaM"/>
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />                    
+                    <input type="button" value="BUSCAR"  onclick="ejecutarMisMovimiento()"/>                    
                 </div>
                 <div id="tablaMovimientos">
                     TABLA

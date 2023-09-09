@@ -93,3 +93,67 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+tbody tr:nth-child(odd) {
+    background-color: #908efc;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #6a51cf;
+  }
+  
+  tbody tr {
+    background-image: url(noise.png);
+  }
+  
+  table {
+    background-color: #0b0c0c;
+    width: 100%;
+  }
+  td{
+    text-align: center;
+  }
+  thead{
+    color: white;
+  }
+  .areaTabla{
+    margin-top: 20px;
+  }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid;
+    border-color: #217023;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contenedorBoton{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+.estiloBoton:hover {
+    background-color:white; 
+    color: #217023;
+    border: 1px solid;
+    border-color: #217023;
+    border-radius: 5px;
+}
+.estiloBoton:active{
+    background-color: #217023; 
+    border: 1px solid;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+
+}
+.estiloBoton:disabled {
+    background-color:gray; 
+    color: #232623;
+    border: 1px solid;
+    border-color: #232623;
+    border-radius: 5px;
+}
