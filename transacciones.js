@@ -10,6 +10,24 @@ cargar=function(){
     
 }
 
+mostrarMovimientos = function () {
+    mostrarComponente("divMovimientos");
+    ocultarComponente('divCuentas');
+    ocultarComponente("divTransacciones");
+}
+
+mostrarTransacciones = function () {
+    mostrarComponente("divTransacciones");
+    ocultarComponente('divCuentas');
+    ocultarComponente("divMovimientos");
+}
+
+mostrarCuentas = function () {
+    mostrarComponente('divCuentas');
+    ocultarComponente("divMovimientos");
+    ocultarComponente("divTransacciones");
+}
+
 /*
     Busca la cuenta en el arreglo en función del número de cuenta,
     si existe retorna el objeto cuenta, caso contrario retorna null. 

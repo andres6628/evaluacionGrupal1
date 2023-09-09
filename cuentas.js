@@ -9,6 +9,24 @@ cargar=function(){
     ocultarComponente("divTransacciones");
     
 }
+mostrarMovimientos = function () {
+    mostrarComponente("divMovimientos");
+    ocultarComponente('divCuentas');
+    ocultarComponente("divTransacciones");
+}
+
+mostrarTransacciones = function () {
+    mostrarComponente("divTransacciones");
+    ocultarComponente('divCuentas');
+    ocultarComponente("divMovimientos");
+}
+
+mostrarCuentas = function () {
+    mostrarComponente('divCuentas');
+    ocultarComponente("divMovimientos");
+    ocultarComponente("divTransacciones");
+}
+
 
 mostrarCuentas=function(){
     /*

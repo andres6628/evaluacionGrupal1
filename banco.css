@@ -93,7 +93,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-<<<<<<< HEAD
 
 tbody tr:nth-child(odd) {
     background-color: #908efc;
@@ -157,9 +156,7 @@ tbody tr:nth-child(odd) {
     border: 1px solid;
     border-color: #232623;
     border-radius: 5px;
-=======
 .ingresoDatos{
     display: flex;
     flex-direction: row;
->>>>>>> 8281d3dc1ce9a74979a292bc8ffbfff858296710
 }

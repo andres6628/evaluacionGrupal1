@@ -12,6 +12,9 @@ cargar = function () {
     ocultarComponente("divTransacciones");
 
 }
+
+
+ 
 buscarCuenta = function (cuenta) {
     for (let i = 0; i < movimientos.length; i++) {
         if (movimientos[i].numeroCuenta == cuenta) {
