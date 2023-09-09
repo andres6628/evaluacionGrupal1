@@ -1,4 +1,4 @@
-cuentas=[
+let cuentas=[
     {numeroCuenta:"02234567", cedula:"1714616123",nombre:"Juan",apellido:"Perez",saldo:0.0},
     {numeroCuenta:"02345211",cedula:"1281238233",nombre:"Felipe",apellido:"Caicedo",saldo:0.0}
 ]
@@ -15,19 +15,43 @@ cargar=function(){
     si existe retorna el objeto cuenta, caso contrario retorna null. 
 */
 buscarCuenta=function(numeroCuenta){
-
+    let encontrado = null;
+    let cuenta;
+    for (let i = 0; i < cuentas.length; i++) {
+        cuenta = cuentas[i];
+        if (numeroCuenta == cuenta.numeroCuenta ) {
+            encontrado = cuenta;
+            break;
+        }  
+    }
+    return encontrado;
 }
 
 ejecutarBusqueda=function(){
     //toma el numero de cuenta de la caja de texto
     //invoca a buscarCuenta y guarda el resultado en una variable
     //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
+    let valorCuentaNumero = recuperarTexto("txtBusquedaCuenta");
+    let resultado = buscarCuenta(valorCuentaNumero);
+    if (resultado != null) {
+        mostrarTexto("infoNumeroCuenta",resultado.numeroCuenta);
+        mostrarTexto("infoCedula",resultado.cedula);
+        mostrarTexto("infoNombre",resultado.nombre+" "+resultado.apellido);
+        mostrarTexto("infoSaldo",resultado.saldo);
+    }else{
+        alert("CUENTA NO ENCONTRADA");
+    }
+            
 }
 
 depositar=function(numeroCuenta,monto){
     let cuentaAfectada;
     //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
     //Al saldo actual de la cuenta afectada, le suma el monto que recibe como parámetro
+    cuentaAfectada = buscarCuenta(numeroCuenta);
+    if (cuentaAfectada != null) {
+        cuentaAfectada.saldo += monto;
+    }
 }
 
 ejecutarDeposito=function(){
@@ -36,12 +60,10 @@ ejecutarDeposito=function(){
     //invoca a depositar
     //Muestra un mensaje TRANSACCION EXITOSA
     //Muestra en pantalla el nuevo saldo de la cuenta
-}
-
-depositar=function(numeroCuenta,monto){
-    let cuentaAfectada;
-    //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
-    //Al saldo actual de la cuenta afectada, le suma el monto que recibe como parámetro
+    let valorCuentaNumero = recuperarTexto("txtBusquedaCuenta");
+    let valorMonto = recuperarInt("txtMonto");
+    depositar(valorCuentaNumero,valorMonto);
+    mostrarTexto("lblTransaccion","TRANSACCION EXITOSA");
 }
 
 retirar=function(numeroCuenta,monto){
@@ -51,4 +73,19 @@ retirar=function(numeroCuenta,monto){
     //Si el saldo es suficiente,al saldo actual de la cuenta afectada, le resta el monto que recibe como parámetro
     //Si el saldo no es suficiente, muestra un alert SALDO INSUFICIENTE
     //Si logra retirar muestra un mensaje TRANSACCION EXITOSA y muestra en pantalla el nuevo saldo de la cuenta
+    cuentaAfectada = buscarCuenta(numeroCuenta);
+    if (cuentaAfectada != null) {
+        if (cuentaAfectada.saldo >= monto) {
+            cuentaAfectada.saldo -= monto;
+            mostrarTexto("lblTransaccion","TRANSACCION EXITOSA");
+            mostrarTexto("infoSaldo",cuentaAfectada.saldo);
+        }else{
+            alert("SALDO INSUFICIENTE");
+        }
+    }
+}
+ejecutarRetiro=function(){
+    let valorCuentaNumero = recuperarTexto("txtBusquedaCuenta");
+    let valorMonto = recuperarInt("txtMonto");
+    retirar(valorCuentaNumero,valorMonto);
 }

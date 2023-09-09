@@ -30,7 +30,7 @@
                 <div class="contenedorTexto">
                     <div class="etiquetaTexto">CAMPO 1</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja"/>
                     </div>
                 </div>
                 <div class="contenedorTexto">
@@ -55,30 +55,61 @@
             </div>
 
         </div>
-        <div class="contenido" id="divTransacciones">
+        <div class="contenido" id="divTransacciones"> 
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
                     <div class="etiquetaTexto">CAMPO 1</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtBusquedaCuenta" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()"/>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        NUMERO DE CUENTA:
+                    </div>
+                    <div>
+                        <div class="info" id="infoNumeroCuenta"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        CEDULA:
+                    </div>
+                    <div>
+                        <div class="info" id="infoCedula"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        NOMBRE:
+                    </div>
+                    <div>
+                        <div class="info" id="infoNombre"></div>
+                    </div>
+                </div>
+                <div class="ingresoDatos">
+                    <div class="tituloCampo">
+                        SALDO:
+                    </div>
+                    <div>
+                        <div class="info" id="infoSaldo"></div>
+                    </div>
                 </div>
                 <div class="contenedorTexto">
                     <div class="etiquetaTexto">CAMPO 2</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtMonto"/>
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
-                    <input type="button" value="RETIRAR" />
-                    
+                    <input type="button" value="DEPOSITAR"  onclick="ejecutarDeposito()"/>
+                    <input type="button" value="RETIRAR" onclick="ejecutarRetiro()"/>     
                 </div>
-              
+                <div id="lblTransaccion"></div>
             </div>
         </div>
         <div class="contenido" id="divMovimientos">
