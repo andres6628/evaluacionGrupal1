@@ -158,6 +158,7 @@ depositar=function(numeroCuenta,monto){
         movimiento.monto = monto;
         movimiento.tipo = "C";
         movimientos.push(movimiento);
+        mostrarTexto("infoSaldo",cuentaAfectada.saldo);
     }
 }
 
@@ -231,7 +232,7 @@ filtrarMovimientos = function (numeroCuenta) {
 mostrarMovimiento = function (misMovimientos) {
     //Muestra en pantalla una tabla con los movimientos que recibe en misMovimientos
     let cmpTabla = document.getElementById('tablaMovimientos');
-    let tabla = "<table> <thead><tr><td>#</td><td>NUMERO DE CUENTA</td><td>MONTO</td><td>TIPO</td><td>SUELDO</td></tr></thead><tbody>";
+    let tabla = "<table> <thead><tr><td>#</td><td>NUMERO DE CUENTA</td><td>MONTO</td><td>TIPO</td></tr></thead><tbody>";
     for (let i = 0; i < misMovimientos.length; i++) {
         let movimiento = misMovimientos[i];
         if (movimiento.tipo == 'D') {
